@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  .container
+     h5.badge.badge-pill.badge-info Event Details
+     h1= event.title
+     h3.badge.badge-pill.badge-primary Post by Professor #{event.author}
+     h4 Event date #{event.date}
+     p= event.body
+     hr
+     if user
+       if user.name==event.author
+         a.btn.btn-primary(href='/events/edit/'+event._id) Edit 
+         a.btn.btn-danger.delete-event(href='#',data-id=event._id) Delete

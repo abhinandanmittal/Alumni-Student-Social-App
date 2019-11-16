@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  .container
+     h1 #{title}
+     form(method='POST', action='/events/edit/'+event._id)
+       #form-group
+         label Title:
+         input.form-control(name='title', type='text', value=event.title)
+       #form-group
+         label Event Date:
+         input.form-control(name='date', type='date', value=event.date)
+       #form-group
+       #form-group
+         label Body:
+         textarea.form-control(name='body')= event.body
+       br
+       input.btn.btn-primary(type='submit',value='Submit')
+   

@@ -1,0 +1,74 @@
+doctype html
+html
+  head
+    title #{toptitle}
+    // Google Fonts
+    link(href='https://fonts.googleapis.com/css?family=Montserrat', rel='stylesheet')  
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm', crossorigin='anonymous')
+    // My own stylesheet
+    link(href='css/style.css', rel='stylesheet')
+    link(href='../../css/style.css', rel='stylesheet')
+    link(href='../../img/aps.jpg', rel = 'icon')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    
+  body
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+      a.navbar-brand(href='/') Alumnus Portal System
+         
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarText', aria-controls='navbarText', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+         
+      #navbarText.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          if user
+            li.nav-item
+              a.nav-link(href='/users/Dashboard') Dashboard 
+            li.nav-item
+              a.nav-link(href='/users/alumnuslist') Alumnus Information
+            li.nav-item
+              a.nav-link(href='/users/seminarclips') Past Event Clips    
+          if user      
+            li.nav-item
+              a.nav-link(href='/articles/add') Add Post
+          if user      
+            li.nav-item
+              a.nav-link(href='/events/add') Add Event    
+        ul.nav.navbar-nav.navbar-right
+          if user
+              
+              li
+               .dropdown
+                    button.btn.btn-dark.dropdown-toggle(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                        h2.nav-link.button.button-outline.button-small(href='/users/'+user.name) #{user.name} 
+                    .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                         a.dropdown-item(href='#') Username:#{user.username}
+                         a.dropdown-item(href='#') Email: #{user.email}
+                         a.dropdown-item(href='#')
+                            i.fa.fa-users.lead.text-uppercase   #{user.slct}
+               li 
+                a.nav-link.button.button-outline.button-small(href='/users/logout') Logout             
+     
+          else
+              li
+               a.nav-link.button.button-outline.button-small(href='/users/register') Register
+              li
+               a.nav-link.button.button-outline.button-small(href='/users/login') Login
+       
+            
+    .container
+        != messages('message', locals)
+        if errors
+          each error, i in errors
+            div(class="alert alert-danger") #{error.msg}         
+          
+     
+    block content
+    hr
+    footer
+        p.text-center Copyright &copy; 2019 Alumni Portal System
+    script(src='/bower_components/jquery/dist/jquery.js')  
+    script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
+    script(src='/js/main.js') 
+    script(src="https://use.fontawesome.com/576f6a076e.js")
+       
+      

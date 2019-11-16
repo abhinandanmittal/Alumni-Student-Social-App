@@ -1,0 +1,15 @@
+extends layout
+
+
+block content
+  .container
+     br
+     h1 Short clips of Previous Events
+     br
+     ul.list-group
+       each clip in clips
+         li.list-group-item.shadow-none.p-3.mb-5.bg-secondary.rounded
+           h2 Title: #{clip.title}
+           h3.badge.badge-pill.badge-primary Event was organised on #{clip.date} 
+           br
+           video(src="../../videos/demo.mp4" poster="initial_static_picture.jpg" width="650" controls="")

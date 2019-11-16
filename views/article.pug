@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  .container
+     h1= article.title
+     h3.badge.badge-pill.badge-primary Post by Alumni #{article.author}
+     p= article.body
+     hr
+     if user
+       if user.name==article.author
+         a.btn.btn-primary(href='/articles/edit/'+article._id) Edit 
+         a.btn.btn-danger.delete-article(href='#',data-id=article._id) Delete

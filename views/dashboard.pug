@@ -1,0 +1,37 @@
+extends layout
+
+
+block content
+  .container
+     br
+     h1 Posts
+     br
+     ul.list-group
+       each article in articles
+         li.list-group-item.shadow-none.p-3.mb-5.bg-secondary.rounded
+           h2
+            a.text-warning(href="/articles/"+article._id)=article.title
+           h3.badge.badge-pill.badge-primary Post by Alumni #{article.author} 
+           p.text-white= article.body
+           if user
+            if user.name==article.author
+               a.btn.btn-primary(href='/articles/edit/'+article._id) Edit 
+               a.btn.btn-danger.delete-article(href='#',data-id=article._id) Delete
+
+           
+     h1 Events       
+     br    
+     ul.list-group
+       each event in events
+         li.list-group-item.shadow-none.p-3.mb-5.bg-secondary.rounded
+           h2
+            a.text-warning(href="/events/"+event._id)=event.title
+           h3.badge.badge-pill.badge-danger Post by Professor #{event.author}
+           h3.badge.badge-pill.badge-danger Event Date #{event.date} 
+           p.text-white= event.body
+           if user
+            if user.name==event.author
+               a.btn.btn-primary(href='/events/edit/'+event._id) Edit 
+               a.btn.btn-danger.delete-event(href='#',data-id=event._id) Delete
+
+           
