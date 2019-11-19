@@ -49,6 +49,7 @@ router.post('/register', function(req, res){
       password:password,
       slct:slct
     });
+    if(slct=="alumni"){
     let newAlumni = new Alumni({
       name:name,
       email:email,
@@ -57,6 +58,7 @@ router.post('/register', function(req, res){
       slct:slct
     });
     newAlumni.save();
+  }
 
     bcrypt.genSalt(10, function(err, salt){
       bcrypt.hash(newUser.password, salt, function(err, hash){
