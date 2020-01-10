@@ -13,3 +13,12 @@ Our Online Alumni Application is helpful for the alumni to get updated with late
 This webApp is designed in 36 hours long hackathon :Hack n Cody organised on 15-16 November 2019 in UIET, Kurushetra University KUK,Haryana. 
 Currently in beta version 
 In developing Mode..
+## Some Screenshots:
+### 1.Landing Page 
+![](https://github.com/abhimittal342/Alumni_Portal_System_final/blob/master/public/img/project1.JPG)
+### 2.Post Feed Page 
+![](https://github.com/abhimittal342/Alumni_Portal_System_final/blob/master/public/img/project%202.JPG)
+### 3.Past Event Clips Page 
+![](https://github.com/abhimittal342/Alumni_Portal_System_final/blob/master/public/img/project%203.JPG)
+### 4.Event Feed Page
+![](https://github.com/abhimittal342/Alumni_Portal_System_final/blob/master/public/img/project%205.JPG)
