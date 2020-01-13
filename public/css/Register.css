@@ -761,7 +761,7 @@ input.checkbox:checked:after {
 #slct {
  
  
-  width: 20em;
+  width: 75%;
   height: 3em;
   line-height: 3;
   background:  rgba(255, 255, 255, 0.15);
