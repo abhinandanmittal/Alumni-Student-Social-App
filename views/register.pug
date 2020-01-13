@@ -43,7 +43,7 @@
       doctype html
 head
 
-  title Register
+  title Sign Up
   meta(name='viewport' content='width=device-width, initial-scale=1')
   meta(http-equiv='Content-Type' content='text/html; charset=utf-8')
   script(type='application/x-javascript').
@@ -54,11 +54,13 @@ head
     window.scrollTo(0, 1);
     }
   // Custom Theme files
-  link(href='../../css/login.css' rel='stylesheet' type='text/css' media='all')
+  link(href='../../img/aps.jpg', rel = 'icon')  
+  link(href='../../css/Register.css' rel='stylesheet' type='text/css' media='all')
   // //Custom Theme files
   // web font
   link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm', crossorigin='anonymous')
   link(href='//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i' rel='stylesheet')
+
   // //web font
 // main
 body
@@ -68,7 +70,7 @@ body
           each error, i in errors
             div(class="alert alert-danger") #{error.msg}    
    .main-w3layouts.wrapper
-     h1 Register!
+     h1 Create an Account
      .main-agileinfo
        .agileits-top(style="padding:1rem")
          form(action='/users/register' method='post')
@@ -87,7 +89,7 @@ body
            .wthree-text
              label.anim
                input.checkbox(type='checkbox' required='')
-               span I Agree To The Terms &amp; Conditions
+               span  I Agree To The Terms &amp; Conditions
              .clear  
            input(type='submit' value='SIGNUP')
            p| Have an account? 
